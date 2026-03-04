@@ -1,0 +1,62 @@
+# Quick Deploy Commands - Run These in PowerShell
+
+## Step 1: Navigate to Your Folder
+cd "C:\Users\Dell\OneDrive\Desktop\Website Files"
+
+## Step 2: Initialize Git (if not already)
+git init
+
+## Step 3: Add All Files
+git add .
+
+## Step 4: Make First Commit
+git commit -m "Initial Voltsave AI website deployment"
+
+## Step 5: Add GitHub Remote
+# IMPORTANT: Replace YOUR-USERNAME with your actual GitHub username
+git remote add origin https://github.com/YOUR-USERNAME/voltsave-website.git
+
+## Step 6: Push to GitHub
+git branch -M main
+git push -u origin main
+
+# You may be asked to login to GitHub - use your credentials
+
+---
+
+## Future Updates - After Initial Deploy
+
+# After making changes to any files:
+git add .
+git commit -m "Description of your changes"
+git push
+
+---
+
+## Troubleshooting
+
+# If you get "remote origin already exists":
+git remote remove origin
+git remote add origin https://github.com/YOUR-USERNAME/voltsave-website.git
+
+# If you need to check your remote:
+git remote -v
+
+# If you need to pull changes:
+git pull origin main
+
+---
+
+## Before Running These Commands:
+
+1. Create repository on GitHub:
+   - Go to https://github.com
+   - Click "New Repository"
+   - Name: voltsave-website
+   - Make it Public
+   - Don't initialize with README
+   - Click "Create repository"
+
+2. Install Git if you haven't:
+   - Download from: https://git-scm.com/download/win
+   - Or check if installed: git --version

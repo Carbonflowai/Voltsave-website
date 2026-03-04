@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Voltsave AI - Learn about our mission to help UK & EU SMEs reduce energy costs through AI-powered solutions.">
+    <title>About Us - Voltsave AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Hero Section */
+        .about-hero {
+            padding: 8rem 0 6rem;
+            background: linear-gradient(135deg, #1e3a6f 0%, #2F5DA8 50%, #2BB7A3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(126, 217, 87, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(63, 207, 142, 0.1) 0%, transparent 50%);
+        }
+        
+        .about-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: white;
+            letter-spacing: -0.03em;
+        }
+        
+        .about-hero p {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+        
+        /* Content Sections */
+        .about-content {
+            background: white;
+        }
+        
+        .intro-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+        }
+        
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .intro-content p {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .intro-content p:last-child {
+            color: var(--text-light);
+        }
+        
+        /* Why Section - Dark */
+        .why-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1a1f36 0%, #2F5DA8 100%);
+            color: white;
+        }
+        
+        .why-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: -0.03em;
+        }
+        
+        .why-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .why-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .why-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .why-list li {
+            font-size: 1.25rem;
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .why-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .highlight-text {
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Economic Case Section */
+        .economic-section {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .economic-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+        }
+        
+        .economic-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .economic-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .stat-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(126, 217, 87, 0.1), rgba(63, 207, 142, 0.1));
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0 0.25rem;
+        }
+        
+        /* Mission Vision Cards */
+        .mission-vision-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .mission-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--primary-light));
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            border-color: var(--accent-color);
+        }
+        
+        .mission-card h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+        
+        .mission-card p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+        
+        /* Journey Section */
+        .journey-section {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .journey-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+        }
+        
+        .journey-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 140px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--secondary-color), var(--accent-color), var(--primary-light));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-date {
+            width: 120px;
+            text-align: right;
+            padding-top: 1rem;
+        }
+        
+        .timeline-date span {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(47, 93, 168, 0.3);
+        }
+        
+        .timeline-marker {
+            position: relative;
+            width: 20px;
+            min-width: 20px;
+            height: 20px;
+            background: white;
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            margin-top: 1.5rem;
+            box-shadow: 0 0 0 4px rgba(63, 207, 142, 0.2);
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 2rem 2.5rem;
+            border-radius: 16px;
+            border: 2px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            flex: 1;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 16px 16px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+            box-shadow: 0 12px 40px rgba(63, 207, 142, 0.2);
+        }
+        
+        .timeline-content:hover::before {
+            opacity: 1;
+        }
+        
+        .timeline-logo {
+            width: 120px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        
+        .timeline-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .timeline-content h4 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .timeline-content p {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* Built With Section */
+        .built-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f9fafb 0%, #f0f9f4 100%);
+            position: relative;
+        }
+        
+        .built-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+        }
+        
+        .built-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .built-content p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+        }
+        
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .requirement-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            border: 2px solid transparent;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+        
+        .requirement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 16px 16px 0 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .requirement-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(63, 207, 142, 0.2);
+        }
+        
+        .requirement-card:hover::before {
+            opacity: 1;
+        }
+        
+        .requirement-card h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .requirement-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .principle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 3rem;
+            line-height: 1.6;
+        }
+        
+        .foundation-text {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-top: 1.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a6f 0%, #2F5DA8 50%, #1e3a6f 100%);
+            color: white;
+            padding: 5rem 3rem;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(126, 217, 87, 0.1) 0%, transparent 70%);
+        }
+        
+        .cta-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--primary-color);
+            padding: 1.25rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.2rem;
+            }
+            
+            .intro-content p {
+                font-size: 1.2rem;
+            }
+            
+            .mission-vision {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+            
+            .timeline-date {
+                width: auto;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+            
+            .timeline-marker {
+                margin-top: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .timeline-logo {
+                justify-content: center;
+                margin: 0 auto 1.5rem;
+            }
+            
+            .journey-section h2 {
+                font-size: 2rem;
+            }
+            
+            .requirements-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .why-section h2,
+            .economic-section h2,
+            .built-section h2,
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            
+            .why-content p,
+            .economic-content p,
+            .built-content p {
+                font-size: 1.1rem;
+            }
+            
+            .why-list li {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="Voltsave AI" class="logo-img">
+                </a>
+                <div class="nav-links">
+                    <a href="index.html#problem">Problem</a>
+                    <a href="index.html#features">Product</a>
+                    <a href="index.html#case-study">Case Study</a>
+                    <a href="index.html#benefits">Why Us</a>
+                    <a href="about.html">About</a>
+                    <a href="index.html#demo" class="btn-primary">Join the Waitlist</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>About Voltsave AI</h1>
+            <p>Energy cost control, built for energy-intensive businesses.</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <div class="about-content">
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <div class="container">
+                <div class="intro-content">
+                    <p>
+                        Voltsave AI is an AI-enabled business energy optimisation platform, designed to accelerate the demand-side energy transition.
+                    </p>
+                    <p>
+                        We exist to help businesses transform energy from an unpredictable expense into a structured, manageable, and performance-driven lever.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Section -->
+        <section class="why-section">
+            <div class="container">
+                <h2>Why We Built Voltsave</h2>
+                <div class="why-content">
+                    <p>
+                        Energy has become one of the <span class="highlight-text">largest and least predictable</span> operating costs for businesses.
+                    </p>
+                    <p>At the same time:</p>
+                    <ul class="why-list">
+                        <li>Over 40% of emissions reductions required by 2030 must come from energy efficiency improvements.</li>
+                        <li>SMEs account for a significant share of commercial energy demand.</li>
+                        <li>Yet most lack structured tools to manage energy with financial discipline.</li>
+                    </ul>
+                    <p style="margin-top: 2rem;">
+                        Traditional solutions are either enterprise-focused, procurement-driven, or disconnected from profitability.
+                    </p>
+                    <p>
+                        <strong style="font-size: 1.4rem; color: var(--secondary-color);">Voltsave was built to close that gap.</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Economic Case Section -->
+        <section class="economic-section">
+            <div class="container">
+                <h2>The Economic Case for Energy Efficiency</h2>
+                <div class="economic-content">
+                    <p>
+                        Energy efficiency is not just a sustainability objective, <strong>it is a financial imperative.</strong>
+                    </p>
+                    <p>
+                        Unlocking efficiency across UK SMEs could contribute <span class="stat-highlight">over 22Mt</span> of potential CO₂ savings while strengthening margins and improving operational resilience.
+                    </p>
+                    <p style="font-weight: 600; color: var(--text-dark); font-size: 1.35rem; margin-top: 2rem;">
+                        Voltsave helps businesses translate that systemic opportunity into measurable cost control.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Vision Section -->
+        <section class="mission-vision-section">
+            <div class="container">
+                <div class="mission-vision">
+                    <div class="mission-card">
+                        <h3>Our Mission</h3>
+                        <p>
+                            To give businesses the tools to manage energy as strategically without complex infrastructure or heavy upfront investment.
+                        </p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>Our Vision</h3>
+                        <p>
+                            A future where energy costs are predictable, controllable, and aligned with business performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Built With Section -->
+        <section class="built-section">
+            <div class="container">
+                <h2>Built with Customers in Mind</h2>
+                <div class="built-content">
+                    <p>
+                        Energy optimisation should not require:
+                    </p>
+                    <div class="requirements-grid">
+                        <div class="requirement-card">
+                            <h4>Expensive Hardware Installations</h4>
+                            <p>No costly equipment or complex infrastructure changes needed</p>
+                        </div>
+                        <div class="requirement-card">
+                            <h4>Long-Term Enterprise Contracts</h4>
+                            <p>Flexible engagement without being locked into restrictive agreements</p>
+                        </div>
+                        <div class="requirement-card">
+                            <h4>Disruptive Operational Changes</h4>
+                            <p>Seamless integration without interrupting your business operations</p>
+                        </div>
+                    </div>
+                    <p class="principle">
+                        It should be accessible, structured, and financially accountable.
+                    </p>
+                    <p class="foundation-text">
+                        That is the foundation Voltsave is built on.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey Section -->
+        <section class="journey-section">
+            <div class="container">
+                <h2>Our Journey</h2>
+                <p class="journey-subtitle">
+                    Backed by prestigious programmes and winning industry recognition
+                </p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>NOV 2025</span>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-logo">
+                                <img src="assets/incubator-1.png" alt="HubSpot">
+                            </div>
+                            <h3>Winner</h3>
+                            <h4>HubSpot "We are all Entrepreneurs" Programme</h4>
+                            <p>
+                                Selected as a winner and featured on the HubSpot website for innovative approach to business energy optimisation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>JAN 2026</span>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-logo">
+                                <img src="assets/incubator-2.jpeg" alt="Imperial College London">
+                            </div>
+                            <h3>Cohort #4</h3>
+                            <h4>Imperial College London Climate Pre-Accelerator</h4>
+                            <p>
+                                Supported by Imperial's Climate Entrepreneurs to accelerate climate impact innovation and business development.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <span>JAN 2026</span>
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-logo">
+                                <img src="assets/incubator-3.jpg" alt="London Business School">
+                            </div>
+                            <h3>2026 Cohort</h3>
+                            <h4>London Business School Launchpad Pre-Accelerator</h4>
+                            <p>
+                                Selected for LBS's prestigious entrepreneurship programme, building scalable business foundations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Energy Management?</h2>
+                <p>Join forward-thinking businesses across the UK & Europe who are reducing costs and building a sustainable future.</p>
+                <a href="index.html#demo" class="btn-white">Join the Waitlist</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/Voltsave AI Logo Only.png" alt="Voltsave AI" style="height: 180px;">
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="index.html#demo">Join the Waitlist</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📍 London, UK</p>
+                    <p><a href="https://linkedin.com/company/voltsave-ai" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">🔗 LinkedIn</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Voltsave AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
