@@ -1,5 +1,5 @@
-# Large video files
-*.mp4
+# Large video files (only ignore the huge demo video)
+assets/demo-video.mp4
 *.mov
 *.avi
 
