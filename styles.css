@@ -855,7 +855,20 @@ body {
 }
 
 .detail-icon {
-    font-size: 2rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.detail-icon svg {
+    color: white;
+    width: 24px;
+    height: 24px;
 }
 
 .detail-label {
@@ -893,9 +906,21 @@ body {
 }
 
 .result-icon {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
-    opacity: 0.7;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+}
+
+.result-icon svg {
+    color: white;
+    width: 32px;
+    height: 32px;
 }
 
 .result-number {
